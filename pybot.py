@@ -17,7 +17,7 @@ class para:
 	subject = "Математика"
 	teacher = "Іванов"
 
-days_dictionary = {"Monday": "Понеділок", "Tuesday": "Вівторок", "Wednesday": "Середа","Thursday": "Четвер", "Friday": "П\'ятниця",}
+days_dictionary = {"Monday": "Понеділок", "Tuesday": "Вівторок", "Wednesday": "Середа","Thursday": "Четвер", "Friday": "П\'ятниця","Субота":"Saturday","Неділя" :"Sunday"}
 teacher_dictionary = {"Пулеко Ігор Васильович": "",
 "Могельницька Людмила Францівна": "https://meet.google.com/kfj-fdcc-acm",
 "Кузьменко Олександр Вікторович": "https://meet.google.com/irh-qqke-nts(Лекція)\nhttps://meet.google.com/hoj-ibhc-fed(Лабораторна)",

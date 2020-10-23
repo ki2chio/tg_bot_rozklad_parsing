@@ -1,1 +1,1 @@
-worker:python-3.8.6
+worker:python-3.6.12

@@ -47,9 +47,10 @@ while True:
 		para_INFO.subject = para_table.find('div', {'class': 'subject'}).text
 		para_INFO.teacher = para_table.find('div', {'class': 'teacher'}).text
 		messageForSend = para_INFO.subject + '\n' + para_INFO.teacher + '\n' + para_INFO.type.split(',')[0] + '\n' + teacher_dictionary[para_INFO.teacher] + '\n' + str(para_INFO.hour)
-		bot.send_message(-1001240637697, 'prepare to compare' + str(para_INFO.day) + 'and' + str(tooday)+' '+str(week)+ '|' +str(datetime.now().time().strftime("%H:%M"))+' and '+time_dictionary[str(para_INFO.hour.split('-')[0])])
+		# bot.send_message(-1001240637697, 'prepare to compare' + str(para_INFO.day) + 'and' + str(tooday)+' '+str(week)+ '|' +str(datetime.now().time().strftime("%H:%M"))+' and '+time_dictionary[str(para_INFO.hour.split('-')[0])])
 		if str(para_INFO.day) == str(tooday)+' '+str(week) and str(datetime.now().time().strftime("%H:%M")) == time_dictionary[str(para_INFO.hour.split('-')[0])]:
 			bot.send_message(-1001408795989, messageForSend)
+			time.sleep(15)
 @bot.message_handler(commands=['auth'])
 def send_auth(message):
     pass

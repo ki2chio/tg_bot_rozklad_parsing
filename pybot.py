@@ -9,7 +9,7 @@ bot = telebot.TeleBot("532568136:AAGMuWfuQvRkUNPTorKMqIO3Mio8WFYi948")
 #datetime.now().time().strftime("%H:%M") // ВРЕМЯЧКО
 #datetime.now().isocalendar()[1] тиждень
 
-bot.send_message(-1001408795989, 'bot has been started| curent server time' +str(datetime.now().time().strftime("%H:%M")))
+
 
 class para:
 	day = "Понеділок"
@@ -36,7 +36,7 @@ page = requests.get('https://rozklad.ztu.edu.ua/schedule/group/ІСТм-20-1?new
 soup = BeautifulSoup(page.text,"html.parser")
 tables = soup.find_all('td', {'class': 'content'})
 
-
+bot.send_message(-1001408795989, 'bot has been started| curent server time ' +str(datetime.now().time().strftime("%H:%M"))+'|day '+ tooday)
 		
 for para_table in tables:
 	para_INFO=para()

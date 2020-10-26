@@ -26,7 +26,9 @@ teacher_dictionary = {"Пулеко Ігор Васильович": "",
 "Легенчук Сергій Федорович": "https://meet.google.com/sap-wpta-xkv"}
 #heroku use UTC time and can't change timezone change default time for para to UTC(TZ changet to Kiev)
 time_dictionary = {"8:30":"8:00","10:00":"9:30","11:40":"11:10","13:30":"13:00","15:00":"14:30","16:30":"16:00"}
-
+tooday=days_dictionary[datetime.now().strftime("%A")]
+week = datetime.now().isocalendar()[1]%2
+if week==0: week = 2
 
 page = requests.get('https://rozklad.ztu.edu.ua/schedule/group/ІСТм-20-1?new')
 soup = BeautifulSoup(page.text,"html.parser")

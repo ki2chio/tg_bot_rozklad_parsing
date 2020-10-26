@@ -9,7 +9,7 @@ bot = telebot.TeleBot("532568136:AAGMuWfuQvRkUNPTorKMqIO3Mio8WFYi948")
 #datetime.now().time().strftime("%H:%M") // ВРЕМЯЧКО
 #datetime.now().isocalendar()[1] тиждень
 
-bot.send_message(-1001408795989, 'bot has been started')
+bot.send_message(-1001408795989, 'bot has been started| curent server time' +str(datetime.now().time().strftime("%H:%M")))
 
 class para:
 	day = "Понеділок"
@@ -26,6 +26,7 @@ teacher_dictionary = {"Пулеко Ігор Васильович": "",
 "Дмитренко Ірина Анатоліївна": "--",
 "Вакалюк Тетяна Анатоліївна": "http://meet.google.com/ket-rjmk-gfh(Лабараторна)\nhttps://meet.google.com/vqf-jbtk-ysm",
 "Легенчук Сергій Федорович": "https://meet.google.com/sap-wpta-xkv"}
+#heroku use UTC time and can't change timezone change default time for para to UTC
 time_dictionary = {"8:30":"8:00","10:00":"9:30","11:40":"11:10","13:30":"13:00","15:00":"14:30","16:30":"16:00"}
 tooday=days_dictionary[datetime.now().strftime("%A")]
 week = datetime.now().isocalendar()[1]%2

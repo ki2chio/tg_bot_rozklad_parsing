@@ -50,7 +50,7 @@ for para_table in tables:
 	#print( type( ))
 	#print('cur time', datetime.now().time().strftime("%H:%M"))
 	bot.send_message(-1001240637697, 'prepare to compare' + str(para_INFO.day) + 'and' + str(tooday)+' '+str(week)+ '|' +str(datetime.now().time().strftime("%H:%M"))+' and '+time_dictionary[str(para_INFO.hour.split('-')[0])])
-	if str(para_INFO.day) == str(tooday)+' '+str(week)
+	if str(para_INFO.day) == str(tooday)+' '+str(week):
 		test_msg=str(para_INFO.day) +'|and|'+ str(tooday)+' '+str(week)
 		bot.send_message(-1001240637697, test_msg)
 	if str(para_INFO.day) == str(tooday)+' '+str(week) and str(datetime.now().time().strftime("%H:%M")) == time_dictionary[str(para_INFO.hour.split('-')[0])]:

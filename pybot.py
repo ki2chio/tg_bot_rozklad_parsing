@@ -26,7 +26,7 @@ teacher_dictionary = {"Пулеко Ігор Васильович": "",
 "Дмитренко Ірина Анатоліївна": "--",
 "Вакалюк Тетяна Анатоліївна": "http://meet.google.com/ket-rjmk-gfh(Лабараторна)\nhttps://meet.google.com/vqf-jbtk-ysm",
 "Легенчук Сергій Федорович": "https://meet.google.com/sap-wpta-xkv"}
-#heroku use UTC time and can't change timezone change default time for para to UTC
+#heroku use UTC time and can't change timezone change default time for para to UTC(TZ changet to Kiev)
 time_dictionary = {"8:30":"8:00","10:00":"9:30","11:40":"11:10","13:30":"13:00","15:00":"14:30","16:30":"16:00"}
 tooday=days_dictionary[datetime.now().strftime("%A")]
 week = datetime.now().isocalendar()[1]%2
@@ -46,17 +46,9 @@ for para_table in tables:
 	para_INFO.subject = para_table.find('div', {'class': 'subject'}).text
 	para_INFO.teacher = para_table.find('div', {'class': 'teacher'}).text
 	messageForSend = para_INFO.subject + '\n' + para_INFO.teacher + '\n' + para_INFO.type.split(',')[0] + '\n' + teacher_dictionary[para_INFO.teacher] + '\n' + str(para_INFO.hour)
-	#str(para_INFO.day) == str(tooday)+' '+str(week) and str(datetime.now().time().strftime("%H:%M")) == time_dictionary[str(para_INFO.hour.split('-')[0])]:
-	#print( type( ))
-	#print('cur time', datetime.now().time().strftime("%H:%M"))
 	bot.send_message(-1001240637697, 'prepare to compare' + str(para_INFO.day) + 'and' + str(tooday)+' '+str(week)+ '|' +str(datetime.now().time().strftime("%H:%M"))+' and '+time_dictionary[str(para_INFO.hour.split('-')[0])])
-	if str(para_INFO.day) == str(tooday)+' '+str(week):
-		test_msg=str(para_INFO.day) +'|and|'+ str(tooday)+' '+str(week)
-		bot.send_message(-1001240637697, test_msg)
 	if str(para_INFO.day) == str(tooday)+' '+str(week) and str(datetime.now().time().strftime("%H:%M")) == time_dictionary[str(para_INFO.hour.split('-')[0])]:
 		bot.send_message(-1001408795989, messageForSend)
-		
-
 
 @bot.message_handler(commands=['auth'])
 def send_auth(message):
